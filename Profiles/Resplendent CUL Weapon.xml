@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Deon
+Required: LLamaLibrary BotBase
+		  Lisbeth BotBase
+          ALL currently obtained Resplendent weapons in inventory or Armory.
+          Plenty of Inventory Space
+-->
+
+<!-- 
+Item ID's (Culinarian):
+    33193 - Material A
+    33169 - Component A
+    33201 - Material B
+    33177 - Component B
+    33209 - Material C
+    33185 - Component C
+    33217 - Final Material
+    33161 - Weapon
+-->
+<Profile>
+	<Name>Resplendent Gallyfiend's Frypan</Name>
+	<Order>
+	
+	<StopCrafting/>
+
+    <If Condition="Core.Me.Levels[ClassJobType.Culinarian] &gt; 79 and not HasItem(33161)">
+        <While Condition="not NqHasAtLeast(33217,60)"> <!--- while < 60 final material -->
+            <If Condition="LLHasItemCollectable(33185) or LLHasItemCollectable(33177) or LLHasItemCollectable(33169)"> <!--- turn in routine for any components -->
+                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                <RunCode name="TurnIn"/> 
+                <RunCode name="CloseShop"/>
+            </If>
+
+            <If Condition="not NqHasAtLeast(33193,1) and not NqHasAtLeast(33201,2) and not NqHasAtLeast(33209,2)"> <!--- no materials, need to collect a materials -->
+                <Log Message="Starting by collecting some Material A." />
+                <If Condition="NqHasAtLeast(33217,50)">
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33193,'Amount':20,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>
+                <If Condition="NqHasAtLeast(33217,40) and not NqHasAtLeast(33214,50)">
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33193,'Amount':40,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>
+                <If Condition="NqHasAtLeast(33217,30) and not NqHasAtLeast(33214,40)">
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33193,'Amount':60,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>  
+                <If Condition="NqHasAtLeast(33217,20) and not NqHasAtLeast(33214,30)">
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33193,'Amount':80,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>
+                <If Condition="not NqHasAtLeast(33217,20)">
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33193,'Amount':100,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>                                                                                                                 
+            </If>
+
+            <While Condition="NqHasAtLeast(33193,50)"> <!-- use all material a ingredients -->
+                <Log Message="Using up Material A." />
+                <Lisbeth Json="[{'Group':1,'Item':33169,'Amount':50,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>
+
+            <While Condition="NqHasAtLeast(33193,25)"> <!-- use all material a ingredients -->
+                <Log Message="Using up Material A." />
+                <Lisbeth Json="[{'Group':1,'Item':33169,'Amount':25,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>  
+
+            <While Condition="NqHasAtLeast(33193,10)"> <!-- use all material a ingredients -->
+                <Log Message="Using up Material A." />
+                <Lisbeth Json="[{'Group':1,'Item':33169,'Amount':10,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While> 
+
+            <While Condition="NqHasAtLeast(33193,1)"> <!-- use all material a ingredients -->
+                <Log Message="Using up Material A." />
+                <Lisbeth Json="[{'Group':1,'Item':33169,'Amount':1,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>                                     
+
+            <If Condition="LLHasItemCollectable(33193)">
+                <Log Message="Turning in Component A for Material B." />
+
+                <If Condition="ClassName != ClassJobType.Culinarian">
+                    <ChangeClass Job="Culinarian" force="True"/>
+                </If>
+
+                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                <RunCode name="TurnIn"/> 
+                <RunCode name="CloseShop"/>
+            </If>
+
+            <While Condition="NqHasAtLeast(33201,50)"> <!-- use all material a ingredients -->
+                <Log Message="Using up 50 Material B." />
+                <Lisbeth Json="[{'Group':1,'Item':33177,'Amount':25,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>
+
+            <While Condition="NqHasAtLeast(33201,30)"> <!-- use all material a ingredients -->
+                <Log Message="Using up 30 Material B." />
+                <Lisbeth Json="[{'Group':1,'Item':33177,'Amount':15,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>  
+
+            <While Condition="NqHasAtLeast(33201,10)"> <!-- use all material a ingredients -->
+                <Log Message="Using up 10 Material B." />
+                <Lisbeth Json="[{'Group':1,'Item':33177,'Amount':5,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While> 
+
+            <While Condition="NqHasAtLeast(33201,2)"> <!-- use all material a ingredients -->
+                <Log Message="Using up Material B." />
+                <Lisbeth Json="[{'Group':1,'Item':33177,'Amount':1,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>             
+
+            <If Condition="LLHasItemCollectable(33177)">
+                <Log Message="Turning in Component B for Material C." />
+                
+                <If Condition="ClassName != ClassJobType.Culinarian">
+                    <ChangeClass Job="Culinarian" force="True"/>
+                </If>
+
+                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                <RunCode name="TurnIn"/> 
+                <RunCode name="CloseShop"/>
+            </If> 
+
+            <While Condition="NqHasAtLeast(33209,50)"> <!-- use all material a ingredients -->
+                <Log Message="Using up 50 Material C." />
+                <Lisbeth Json="[{'Group':1,'Item':33185,'Amount':25,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>
+
+            <While Condition="NqHasAtLeast(33209,30)"> <!-- use all material a ingredients -->
+                <Log Message="Using up 30 Material C." />
+                <Lisbeth Json="[{'Group':1,'Item':33185,'Amount':15,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>  
+
+            <While Condition="NqHasAtLeast(33209,10)"> <!-- use all material a ingredients -->
+                <Log Message="Using up 10 Material C." />
+                <Lisbeth Json="[{'Group':1,'Item':33185,'Amount':5,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While> 
+
+            <While Condition="NqHasAtLeast(33209,2)"> <!-- use all material a ingredients -->
+                <Log Message="Using up Material C." />
+                <Lisbeth Json="[{'Group':1,'Item':33185,'Amount':1,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
+            </While>                                                             
+
+            <If Condition="LLHasItemCollectable(33185)">
+                <Log Message="Turning in Component C for Final Material." />
+                
+                <If Condition="ClassName != ClassJobType.Culinarian">
+                    <ChangeClass Job="Culinarian" force="True"/>
+                </If>
+
+                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                <RunCode name="TurnIn"/>
+                <RunCode name="CloseShop"/>
+            </If>
+        </While>
+
+        <!--- buy the weapon -->
+        <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+        <BuyShopExchangeItem NpcId="1027566" ItemId="33161" SelectString="1"/>
+        
+        <Log Message="Congrats on obtaining the Resplendent Gallyfiend's Frypan! Moving on..."/>
+    </If>
+
+    <!--- discard leftover materials -->
+    <If Condition="HasItem(33161)">
+        <If Condition="NqHasAtLeast(33193,1)">
+            <RunCode name="DiscardA"/>
+        </If>
+        <If Condition="NqHasAtLeast(33201,1)">
+            <RunCode name="DiscardB"/>
+        </If>
+        <If Condition="NqHasAtLeast(33209,1)">
+            <RunCode name="DiscardC"/>
+        </If>
+        <If Condition="NqHasAtLeast(33217,1)">
+            <RunCode name="DiscardF"/>
+        </If>                                    
+    </If>    
+
+    </Order>
+    <CodeChunks>
+		<CodeChunk Name="TurnIn">
+		<![CDATA[
+			Logging.Write("[Resplendent Handin] calling");
+			await LlamaLibrary.Helpers.GeneralFunctions.TurninResplendentCrafting();
+		]]>
+		</CodeChunk>
+        <CodeChunk Name="CloseShop">
+			<![CDATA[ 
+				var windowName = "ShopExchangeItem";
+				await Coroutine.Wait(5000, () => RaptureAtkUnitManager.GetWindowByName(windowName) != null);				
+				AtkAddonControl windowByName = RaptureAtkUnitManager.GetWindowByName(windowName);					
+				windowByName = RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem");
+				await Coroutine.Wait(5000, () => windowByName != null);
+				if (windowByName != null)
+				windowByName.SendAction(1, 3uL, 4294967295uL);		
+			]]>
+        </CodeChunk>
+		<CodeChunk Name="DiscardA">
+		  <![CDATA[ 
+            BagSlot toDiscard = InventoryManager.FilledInventoryAndArmory.First(x => x.RawItemId == 33193);
+            if (toDiscard != null && toDiscard.IsFilled) LlamaLibrary.Extensions.BagSlotExtensions.Discard(toDiscard);                                 
+		  ]]>
+		</CodeChunk>  
+		<CodeChunk Name="DiscardB">
+		  <![CDATA[ 
+            BagSlot toDiscard = InventoryManager.FilledInventoryAndArmory.First(x => x.RawItemId == 33201);
+            if (toDiscard != null && toDiscard.IsFilled) LlamaLibrary.Extensions.BagSlotExtensions.Discard(toDiscard);                                 
+		  ]]>
+		</CodeChunk>
+		<CodeChunk Name="DiscardC">
+		  <![CDATA[ 
+            BagSlot toDiscard = InventoryManager.FilledInventoryAndArmory.First(x => x.RawItemId == 33209);
+            if (toDiscard != null && toDiscard.IsFilled) LlamaLibrary.Extensions.BagSlotExtensions.Discard(toDiscard);                                 
+		  ]]>
+		</CodeChunk>
+		<CodeChunk Name="DiscardF">
+		  <![CDATA[ 
+            BagSlot toDiscard = InventoryManager.FilledInventoryAndArmory.First(x => x.RawItemId == 33217);
+            if (toDiscard != null && toDiscard.IsFilled) LlamaLibrary.Extensions.BagSlotExtensions.Discard(toDiscard);                                 
+		  ]]>
+		</CodeChunk>                              
+    </CodeChunks>
+</Profile>
