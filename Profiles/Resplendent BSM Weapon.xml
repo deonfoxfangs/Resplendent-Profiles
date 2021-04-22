@@ -33,118 +33,136 @@ Item ID's (Blacksmith):
             </If>
 
             <If Condition="not NqHasAtLeast(33187,1) and not NqHasAtLeast(33195,2) and not NqHasAtLeast(33203,2)"> <!--- no materials, need to collect a materials -->
-                <Log Message="Starting by collecting some Material A." />
-                <If Condition="NqHasAtLeast(33211,50)">
-                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':20,'Enabled':true,'Type':'Exchange'}]"/>
+                <If Condition="NqHasAtLeast(33211,55)">
+                    <Log Message="Starting by collecting 10 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':10,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>                
+                <If Condition="NqHasAtLeast(33211,50) and not NqHasAtLeast(33211,55)">
+                    <Log Message="Starting by collecting 19 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':19,'Enabled':true,'Type':'Exchange'}]"/>
                 </If>
-                <If Condition="NqHasAtLeast(33211,40) and not NqHasAtLeast(33214,50)">
-                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':40,'Enabled':true,'Type':'Exchange'}]"/>
+                <If Condition="NqHasAtLeast(33211,40) and not NqHasAtLeast(33211,50)">
+                    <Log Message="Starting by collecting 37 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':37,'Enabled':true,'Type':'Exchange'}]"/>
                 </If>
-                <If Condition="NqHasAtLeast(33211,30) and not NqHasAtLeast(33214,40)">
-                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':60,'Enabled':true,'Type':'Exchange'}]"/>
+                <If Condition="NqHasAtLeast(33211,30) and not NqHasAtLeast(33211,40)">
+                    <Log Message="Starting by collecting 55 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':55,'Enabled':true,'Type':'Exchange'}]"/>
                 </If>  
-                <If Condition="NqHasAtLeast(33211,20) and not NqHasAtLeast(33214,30)">
-                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':80,'Enabled':true,'Type':'Exchange'}]"/>
+                <If Condition="NqHasAtLeast(33211,20) and not NqHasAtLeast(33211,30)">
+                    <Log Message="Starting by collecting 74 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':74,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>                
+                <If Condition="NqHasAtLeast(33211,10) and not NqHasAtLeast(33211,20)">
+                    <Log Message="Starting by collecting 92 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':92,'Enabled':true,'Type':'Exchange'}]"/>
                 </If>
-                <If Condition="not NqHasAtLeast(33211,20)">
-                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':100,'Enabled':true,'Type':'Exchange'}]"/>
-                </If>                                                                                                                
+                <If Condition="not NqHasAtLeast(33211,1)">
+                    <Log Message="Starting by collecting 110 Material A." />
+                    <Lisbeth Json="[{'Id':1,'Group':1,'Item':33187,'Amount':110,'Enabled':true,'Type':'Exchange'}]"/>
+                </If>                                                                                                                 
             </If>
 
-            <While Condition="NqHasAtLeast(33187,50)"> <!-- use all material a ingredients -->
-                <Log Message="Using up Material A." />
-                <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':50,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>
+            <If Condition="not NqHasAtLeast(33211,60)">
+                <While Condition="NqHasAtLeast(33203,50)"> <!-- use all material c ingredients -->
+                    <Log Message="Using up 50 Material C." />
+                    <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':25,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>
 
-            <While Condition="NqHasAtLeast(33187,25)"> <!-- use all material a ingredients -->
-                <Log Message="Using up Material A." />
-                <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':25,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>  
+                <While Condition="NqHasAtLeast(33203,30)"> <!-- use all material c ingredients -->
+                    <Log Message="Using up 30 Material C." />
+                    <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':15,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>  
 
-            <While Condition="NqHasAtLeast(33187,10)"> <!-- use all material a ingredients -->
-                <Log Message="Using up Material A." />
-                <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':10,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While> 
+                <While Condition="NqHasAtLeast(33203,10)"> <!-- use all material c ingredients -->
+                    <Log Message="Using up 10 Material C." />
+                    <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':5,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While> 
 
-            <While Condition="NqHasAtLeast(33187,1)"> <!-- use all material a ingredients -->
-                <Log Message="Using up Material A." />
-                <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':1,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>                                     
+                <While Condition="NqHasAtLeast(33203,2)"> <!-- use all material c ingredients -->
+                    <Log Message="Using up Material C." />
+                    <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':1,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>                                                             
 
-            <If Condition="LLHasItemCollectable(33187)">
-                <Log Message="Turning in Component A for Material B." />
+                <If Condition="LLHasItemCollectable(33179)">
+                    <Log Message="Turning in Component C for Final Material." />
+                    
+                    <If Condition="ClassName != ClassJobType.Blacksmith">
+                        <ChangeClass Job="Blacksmith" force="True"/>
+                    </If>
 
-                <If Condition="ClassName != ClassJobType.Blacksmith">
-                    <ChangeClass Job="Blacksmith" force="True"/>
+                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                    <RunCode name="TurnIn"/>
+                    <RunCode name="CloseShop"/>
                 </If>
-
-                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                <RunCode name="TurnIn"/> 
-                <RunCode name="CloseShop"/>
             </If>
 
-            <While Condition="NqHasAtLeast(33195,50)"> <!-- use all material a ingredients -->
-                <Log Message="Using up 50 Material B." />
-                <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':25,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>
+            <If Condition="not NqHasAtLeast(33211,60)">
+                <While Condition="NqHasAtLeast(33195,50)"> <!-- use all material b ingredients -->
+                    <Log Message="Using up 50 Material B." />
+                    <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':25,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>
 
-            <While Condition="NqHasAtLeast(33195,30)"> <!-- use all material a ingredients -->
-                <Log Message="Using up 30 Material B." />
-                <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':15,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>  
+                <While Condition="NqHasAtLeast(33195,30)"> <!-- use all material b ingredients -->
+                    <Log Message="Using up 30 Material B." />
+                    <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':15,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>  
 
-            <While Condition="NqHasAtLeast(33195,10)"> <!-- use all material a ingredients -->
-                <Log Message="Using up 10 Material B." />
-                <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':5,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While> 
+                <While Condition="NqHasAtLeast(33195,10)"> <!-- use all material b ingredients -->
+                    <Log Message="Using up 10 Material B." />
+                    <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':5,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While> 
 
-            <While Condition="NqHasAtLeast(33195,2)"> <!-- use all material a ingredients -->
-                <Log Message="Using up Material B." />
-                <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':1,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>             
+                <While Condition="NqHasAtLeast(33195,2)"> <!-- use all material b ingredients -->
+                    <Log Message="Using up Material B." />
+                    <Lisbeth Json="[{'Group':1,'Item':33171,'Amount':1,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>             
 
-            <If Condition="LLHasItemCollectable(33171)">
-                <Log Message="Turning in Component B for Material C." />
-                
-                <If Condition="ClassName != ClassJobType.Blacksmith">
-                    <ChangeClass Job="Blacksmith" force="True"/>
+                <If Condition="LLHasItemCollectable(33171)">
+                    <Log Message="Turning in Component B for Material C." />
+                    
+                    <If Condition="ClassName != ClassJobType.Blacksmith">
+                        <ChangeClass Job="Blacksmith" force="True"/>
+                    </If>
+
+                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                    <RunCode name="TurnIn"/> 
+                    <RunCode name="CloseShop"/>
+                </If> 
+            </If>            
+
+            <If Condition="not NqHasAtLeast(33203,2)">>
+                <While Condition="NqHasAtLeast(33187,50)"> <!-- use all material a ingredients -->
+                    <Log Message="Using up Material A." />
+                    <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':50,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>
+
+                <While Condition="NqHasAtLeast(33187,25)"> <!-- use all material a ingredients -->
+                    <Log Message="Using up Material A." />
+                    <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':25,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>  
+
+                <While Condition="NqHasAtLeast(33187,10)"> <!-- use all material a ingredients -->
+                    <Log Message="Using up Material A." />
+                    <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':10,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While> 
+
+                <While Condition="NqHasAtLeast(33187,1)"> <!-- use all material a ingredients -->
+                    <Log Message="Using up Material A." />
+                    <Lisbeth Json="[{'Group':1,'Item':33163,'Amount':1,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
+                </While>                                     
+
+                <If Condition="LLHasItemCollectable(33187)">
+                    <Log Message="Turning in Component A for Material B." />
+
+                    <If Condition="ClassName != ClassJobType.Blacksmith">
+                        <ChangeClass Job="Blacksmith" force="True"/>
+                    </If>
+
+                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
+                    <RunCode name="TurnIn"/> 
+                    <RunCode name="CloseShop"/>
                 </If>
-
-                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                <RunCode name="TurnIn"/> 
-                <RunCode name="CloseShop"/>
-            </If> 
-
-            <While Condition="NqHasAtLeast(33203,50)"> <!-- use all material a ingredients -->
-                <Log Message="Using up 50 Material C." />
-                <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':25,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>
-
-            <While Condition="NqHasAtLeast(33203,30)"> <!-- use all material a ingredients -->
-                <Log Message="Using up 30 Material C." />
-                <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':15,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>  
-
-            <While Condition="NqHasAtLeast(33203,10)"> <!-- use all material a ingredients -->
-                <Log Message="Using up 10 Material C." />
-                <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':5,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While> 
-
-            <While Condition="NqHasAtLeast(33203,2)"> <!-- use all material a ingredients -->
-                <Log Message="Using up Material C." />
-                <Lisbeth Json="[{'Group':1,'Item':33179,'Amount':1,'Enabled':true,'Type':'Blacksmith','Collectable':true,'AmountMode':'Absolute'}]"/>
-            </While>                                                             
-
-            <If Condition="LLHasItemCollectable(33179)">
-                <Log Message="Turning in Component C for Final Material." />
-                
-                <If Condition="ClassName != ClassJobType.Blacksmith">
-                    <ChangeClass Job="Blacksmith" force="True"/>
-                </If>
-
-                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                <RunCode name="TurnIn"/>
-                <RunCode name="CloseShop"/>
             </If>
         </While>
 
