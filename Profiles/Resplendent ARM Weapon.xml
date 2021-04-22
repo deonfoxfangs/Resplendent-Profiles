@@ -169,7 +169,9 @@ Item ID's (Armorer):
         <If Condition="NqHasAtLeast(33212,1)">
             <RunCode name="DiscardF"/>
         </If>                                    
-    </If>    
+    </If> 
+
+    <LLoadProfile Path="../Resplendent Start.xml"/>    
 
     </Order>
     <CodeChunks>

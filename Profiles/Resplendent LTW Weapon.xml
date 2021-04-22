@@ -169,7 +169,9 @@ Item ID's (Leatherworker):
         <If Condition="NqHasAtLeast(33214,1)">
             <RunCode name="DiscardF"/>
         </If>                                    
-    </If>    
+    </If>  
+
+    <LLoadProfile Path="../Resplendent Start.xml"/>  
 
     </Order>
     <CodeChunks>

@@ -169,7 +169,9 @@ Item ID's (Alchemist):
         <If Condition="NqHasAtLeast(33216,1)">
             <RunCode name="DiscardF"/>
         </If>                                    
-    </If>    
+    </If>   
+
+    <LLoadProfile Path="../Resplendent Start.xml"/>  
 
     </Order>
     <CodeChunks>

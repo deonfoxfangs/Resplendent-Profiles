@@ -169,7 +169,9 @@ Item ID's (Blacksmith):
         <If Condition="NqHasAtLeast(33211,1)">
             <RunCode name="DiscardF"/>
         </If>                                    
-    </If>    
+    </If> 
+
+    <LLoadProfile Path="../Resplendent Start.xml"/>    
 
     </Order>
     <CodeChunks>

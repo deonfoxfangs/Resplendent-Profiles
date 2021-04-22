@@ -171,6 +171,8 @@ Item ID's (Culinarian):
         </If>                                    
     </If>    
 
+    <LLoadProfile Path="../Resplendent Start.xml"/> 
+
     </Order>
     <CodeChunks>
 		<CodeChunk Name="TurnIn">
