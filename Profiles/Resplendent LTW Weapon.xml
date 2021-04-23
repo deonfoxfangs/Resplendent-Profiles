@@ -16,7 +16,7 @@ Item ID's (Leatherworker):
     33206 - Material C
     33182 - Component C
     33214 - Final Material
-    33159 - Weapon
+    33158 - Weapon
 -->
 <Profile>
 	<Name>Resplendent Hidefiend's Knife</Name>
@@ -24,7 +24,7 @@ Item ID's (Leatherworker):
 	
 	<StopCrafting/>
 
-    <If Condition="Core.Me.Levels[ClassJobType.Leatherworker] &gt; 79 and not HasItem(33159)">
+    <If Condition="Core.Me.Levels[ClassJobType.Leatherworker] &gt; 79 and not HasItem(33158)">
         <While Condition="not NqHasAtLeast(33214,60)"> <!--- while < 60 final material -->
             <If Condition="LLHasItemCollectable(33182) or LLHasItemCollectable(33174) or LLHasItemCollectable(33166)"> <!--- turn in routine for any components -->
                 <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
@@ -168,13 +168,13 @@ Item ID's (Leatherworker):
 
         <!--- buy the weapon -->
         <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-        <BuyShopExchangeItem NpcId="1027566" ItemId="33159" SelectString="1"/>
+        <BuyShopExchangeItem NpcId="1027566" ItemId="33158" SelectString="1"/>
         
         <Log Message="Congrats on obtaining the Resplendent Hidefiend's Knife! Moving on..."/>
     </If>
 
     <!--- discard leftover materials -->
-    <If Condition="HasItem(33159)">
+    <If Condition="HasItem(33158)">
         <If Condition="NqHasAtLeast(33190,1)">
             <RunCode name="DiscardA"/>
         </If>
