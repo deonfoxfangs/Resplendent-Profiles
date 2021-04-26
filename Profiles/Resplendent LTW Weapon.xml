@@ -84,7 +84,7 @@ Item ID's (Leatherworker):
                     <Lisbeth Json="[{'Group':1,'Item':33182,'Amount':1,'Enabled':true,'Type':'Leatherworker','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>                                                             
 
-                <If Condition="LLHasItemCollectable(33182)">
+                <While Condition="LLHasItemCollectable(33182)">
                     <Log Message="Turning in Component C for Final Material." />
                     
                     <If Condition="ClassName != ClassJobType.Leatherworker">
@@ -94,7 +94,7 @@ Item ID's (Leatherworker):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/>
                     <RunCode name="CloseShop"/>
-                </If>
+                </While>
             </If> 
 
             <If Condition="not NqHasAtLeast(33214,60)">
@@ -118,7 +118,7 @@ Item ID's (Leatherworker):
                     <Lisbeth Json="[{'Group':1,'Item':33174,'Amount':1,'Enabled':true,'Type':'Leatherworker','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>             
 
-                <If Condition="LLHasItemCollectable(33174)">
+                <While Condition="LLHasItemCollectable(33174)">
                     <Log Message="Turning in Component B for Material C." />
                     
                     <If Condition="ClassName != ClassJobType.Leatherworker">
@@ -128,7 +128,7 @@ Item ID's (Leatherworker):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/> 
                     <RunCode name="CloseShop"/>
-                </If> 
+                </While> 
             </If>                      
 
             <If Condition="not NqHasAtLeast(33206,2)">
@@ -152,7 +152,7 @@ Item ID's (Leatherworker):
                     <Lisbeth Json="[{'Group':1,'Item':33166,'Amount':1,'Enabled':true,'Type':'Leatherworker','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>                                     
 
-                <If Condition="LLHasItemCollectable(33190)">
+                <While Condition="LLHasItemCollectable(33190)">
                     <Log Message="Turning in Component A for Material B." />
 
                     <If Condition="ClassName != ClassJobType.Leatherworker">
@@ -162,7 +162,7 @@ Item ID's (Leatherworker):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/> 
                     <RunCode name="CloseShop"/>
-                </If>
+                </While>
             </If>
         </While>
 

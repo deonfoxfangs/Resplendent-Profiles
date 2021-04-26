@@ -84,7 +84,7 @@ Item ID's (Culinarian):
                     <Lisbeth Json="[{'Group':1,'Item':33185,'Amount':1,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>                                                             
 
-                <If Condition="LLHasItemCollectable(33185)">
+                <While Condition="LLHasItemCollectable(33185)">
                     <Log Message="Turning in Component C for Final Material." />
                     
                     <If Condition="ClassName != ClassJobType.Culinarian">
@@ -94,7 +94,7 @@ Item ID's (Culinarian):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/>
                     <RunCode name="CloseShop"/>
-                </If>
+                </While>
             </If>
 
             <If Condition="not NqHasAtLeast(33217,60)">
@@ -118,7 +118,7 @@ Item ID's (Culinarian):
                     <Lisbeth Json="[{'Group':1,'Item':33177,'Amount':1,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>             
 
-                <If Condition="LLHasItemCollectable(33177)">
+                <While Condition="LLHasItemCollectable(33177)">
                     <Log Message="Turning in Component B for Material C." />
                     
                     <If Condition="ClassName != ClassJobType.Culinarian">
@@ -128,7 +128,7 @@ Item ID's (Culinarian):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/> 
                     <RunCode name="CloseShop"/>
-                </If> 
+                </While> 
             </If>                        
 
             <If Condition="not NqHasAtLeast(33209,2)">
@@ -152,7 +152,7 @@ Item ID's (Culinarian):
                     <Lisbeth Json="[{'Group':1,'Item':33169,'Amount':1,'Enabled':true,'Type':'Culinarian','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>                                     
 
-                <If Condition="LLHasItemCollectable(33193)">
+                <While Condition="LLHasItemCollectable(33193)">
                     <Log Message="Turning in Component A for Material B." />
 
                     <If Condition="ClassName != ClassJobType.Culinarian">
@@ -162,7 +162,7 @@ Item ID's (Culinarian):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/> 
                     <RunCode name="CloseShop"/>
-                </If>
+                </While>
             </If>
         </While>
 

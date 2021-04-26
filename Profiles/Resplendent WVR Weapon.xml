@@ -83,7 +83,7 @@ Item ID's (Weaver):
                 <Lisbeth Json="[{'Group':1,'Item':33183,'Amount':1,'Enabled':true,'Type':'Weaver','Collectable':true,'AmountMode':'Absolute'}]"/>
             </While>                                                             
 
-            <If Condition="LLHasItemCollectable(33183)">
+            <While Condition="LLHasItemCollectable(33183)">
                 <Log Message="Turning in Component C for Final Material." />
                 
                 <If Condition="ClassName != ClassJobType.Weaver">
@@ -93,7 +93,7 @@ Item ID's (Weaver):
                 <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                 <RunCode name="TurnIn"/>
                 <RunCode name="CloseShop"/>
-            </If>
+            </While>
 
             <If Condition="not NqHasAtLeast(33215,60)">
                 <While Condition="NqHasAtLeast(33199,50)"> <!-- use all material b ingredients -->
@@ -116,7 +116,7 @@ Item ID's (Weaver):
                     <Lisbeth Json="[{'Group':1,'Item':33175,'Amount':1,'Enabled':true,'Type':'Weaver','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>             
 
-                <If Condition="LLHasItemCollectable(33175)">
+                <While Condition="LLHasItemCollectable(33175)">
                     <Log Message="Turning in Component B for Material C." />
                     
                     <If Condition="ClassName != ClassJobType.Weaver">
@@ -126,7 +126,7 @@ Item ID's (Weaver):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/> 
                     <RunCode name="CloseShop"/>
-                </If>
+                </While>
             </If>
 
             <If Condition="not NqHasAtLeast(33207,2)">
@@ -150,7 +150,7 @@ Item ID's (Weaver):
                     <Lisbeth Json="[{'Group':1,'Item':33167,'Amount':1,'Enabled':true,'Type':'Weaver','Collectable':true,'AmountMode':'Absolute'}]"/>
                 </While>                                     
 
-                <If Condition="LLHasItemCollectable(33191)">
+                <While Condition="LLHasItemCollectable(33191)">
                     <Log Message="Turning in Component A for Material B." />
 
                     <If Condition="ClassName != ClassJobType.Weaver">
@@ -160,7 +160,7 @@ Item ID's (Weaver):
                     <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/> 
                     <RunCode name="CloseShop"/>
-                </If>   
+                </While>   
             </If>         
         </While>
 
