@@ -85,14 +85,7 @@ Item ID's (Weaver):
 
             <While Condition="LLHasItemCollectable(33183)">
                 <Log Message="Turning in Component C for Final Material." />
-                
-                <If Condition="ClassName != ClassJobType.Weaver">
-                    <ChangeClass Job="Weaver" force="True"/>
-                </If>
-
-                <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                <RunCode name="TurnIn"/>
-                <RunCode name="CloseShop"/>
+                    <RunCode name="TurnIn"/>
             </While>
 
             <If Condition="not NqHasAtLeast(33215,60)">
@@ -118,14 +111,7 @@ Item ID's (Weaver):
 
                 <While Condition="LLHasItemCollectable(33175)">
                     <Log Message="Turning in Component B for Material C." />
-                    
-                    <If Condition="ClassName != ClassJobType.Weaver">
-                        <ChangeClass Job="Weaver" force="True"/>
-                    </If>
-
-                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                    <RunCode name="TurnIn"/> 
-                    <RunCode name="CloseShop"/>
+                    <RunCode name="TurnIn"/>
                 </While>
             </If>
 
@@ -152,14 +138,7 @@ Item ID's (Weaver):
 
                 <While Condition="LLHasItemCollectable(33191)">
                     <Log Message="Turning in Component A for Material B." />
-
-                    <If Condition="ClassName != ClassJobType.Weaver">
-                        <ChangeClass Job="Weaver" force="True"/>
-                    </If>
-
-                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                    <RunCode name="TurnIn"/> 
-                    <RunCode name="CloseShop"/>
+                    <RunCode name="TurnIn"/>
                 </While>   
             </If>         
         </While>

@@ -87,14 +87,7 @@ Item ID's (Alchemist):
 
                 <While Condition="LLHasItemCollectable(33184)">
                     <Log Message="Turning in Component C for Final Material." />
-                    
-                    <If Condition="ClassName != ClassJobType.Alchemist">
-                        <ChangeClass Job="Alchemist" force="True"/>
-                    </If>
-
-                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
                     <RunCode name="TurnIn"/>
-                    <RunCode name="CloseShop"/>
                 </While>
             </If>
 
@@ -121,14 +114,7 @@ Item ID's (Alchemist):
 
                 <While Condition="LLHasItemCollectable(33176)">
                     <Log Message="Turning in Component B for Material C." />
-                    
-                    <If Condition="ClassName != ClassJobType.Alchemist">
-                        <ChangeClass Job="Alchemist" force="True"/>
-                    </If>
-
-                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                    <RunCode name="TurnIn"/> 
-                    <RunCode name="CloseShop"/>
+                    <RunCode name="TurnIn"/>
                 </While>
             </If>            
 
@@ -155,14 +141,7 @@ Item ID's (Alchemist):
 
                 <While Condition="LLHasItemCollectable(33192)">
                     <Log Message="Turning in Component A for Material B." />
-
-                    <If Condition="ClassName != ClassJobType.Alchemist">
-                        <ChangeClass Job="Alchemist" force="True"/>
-                    </If>
-
-                    <GetTo ZoneId="820" XYZ="20.79589, 82.05, -14.57837" />
-                    <RunCode name="TurnIn"/> 
-                    <RunCode name="CloseShop"/>
+                    <RunCode name="TurnIn"/>
                 </While>
             </If>
         </While>
